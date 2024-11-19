@@ -77,7 +77,7 @@ const students = [
         twitter: 'https://twitter.com/diana'
     },
     {
-        id: 1,
+        id: 8,
         name: 'Sahil Khan',
         course: 'Computer Science',
         year: 3,
