@@ -1,3 +1,5 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Space+Grotesk:wght@300..700&display=swap');
 
 :root {
     --bg-color: #ffffff;
@@ -24,7 +26,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Space Grotesk", sans-serif, sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
@@ -350,6 +352,13 @@ body {
 
 .social-links a:hover {
     transform: scale(1.2);
+}
+
+/* search input */
+#searchInput{
+    width: 30%;
+    height: 120%;
+    margin-bottom: 1%;
 }
 
 /* Animations */
