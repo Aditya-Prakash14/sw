@@ -1,147 +1,106 @@
-// Sample student data generator
-function generateStudents(count) {
-    const courses = ['Computer Science', 'Engineering', 'Business'];
-    const students = [];
-
-    for (let i = 0; i < count; i++) {
-        students.push({
-            name: `Student ${i + 1}`,
-            course: courses[Math.floor(Math.random() * courses.length)],
-            year: Math.floor(Math.random() * 4) + 1,
-            bio: `A passionate student with a love for ${['technology', 'innovation', 'entrepreneurship'][Math.floor(Math.random() * 3)]}.`,
-            image: `/placeholder.svg?height=200&width=200&text=Student${i + 1}`,
-            social: {
-                twitter: `student${i + 1}`,
-                linkedin: `student${i + 1}`,
-                github: `student${i + 1}`
-            }
-        });
+const coders = [
+    {
+        name: "Jane Doe",
+        role: "Full Stack Developer",
+        avatar: "/placeholder.svg?height=120&width=120",
+        description: "Experienced in building scalable web applications.",
+        skills: ["JavaScript", "React", "Node.js", "Python", "SQL"],
+        email: "jane.doe@example.com",
+        location: "San Francisco, CA",
+        github: "github.com/janedoe"
+    },
+    {
+        name: "John Smith",
+        role: "Frontend Specialist",
+        avatar: "/placeholder.svg?height=120&width=120",
+        description: "Passionate about creating intuitive user interfaces.",
+        skills: ["HTML", "CSS", "JavaScript", "Vue.js", "Sass"],
+        email: "john.smith@example.com",
+        location: "New York, NY",
+        github: "github.com/johnsmith"
+    },
+    {
+        name: "Emily Chen",
+        role: "Data Scientist",
+        avatar: "/placeholder.svg?height=120&width=120",
+        description: "Skilled in machine learning and data analysis.",
+        skills: ["Python", "R", "Machine Learning", "SQL", "Tableau"],
+        email: "emily.chen@example.com",
+        location: "Seattle, WA",
+        github: "github.com/emilychen"
+    },
+    {
+        name: "Mohammed Ali",
+        role: "DevOps Engineer",
+        avatar: "/placeholder.svg?height=120&width=120",
+        description: "Experienced in cloud infrastructure and CI/CD pipelines.",
+        skills: ["Docker", "Kubernetes", "AWS", "Jenkins", "Terraform"],
+        email: "mohammed.ali@example.com",
+        location: "London, UK",
+        github: "github.com/mohammedali"
     }
+];
 
-    return students;
-}
-
-let students = generateStudents(20);
-let currentPage = 1;
-const studentsPerPage = 8;
-let isLoading = false;
-
-// Function to create profile cards
-function createProfileCard(student) {
+function createCoderCard(coder, index) {
     const card = document.createElement('div');
-    card.classList.add('profile-card');
-
+    card.className = 'coder-card bg-white rounded-lg shadow-md overflow-hidden';
     card.innerHTML = `
-        <div class="profile-card-inner">
-            <div class="profile-card-front">
-                <img src="${student.image}" alt="${student.name}" class="profile-image">
-                <div class="profile-info">
-                    <h2>${student.name}</h2>
-                    <p><strong>Course:</strong> ${student.course}</p>
-                    <p><strong>Year:</strong> ${student.year}</p>
-                    <div class="social-links">
-                        <a href="https://twitter.com/${student.social.twitter}" target="_blank" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                        <a href="https://linkedin.com/in/${student.social.linkedin}" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-                        <a href="https://github.com/${student.social.github}" target="_blank" aria-label="GitHub"><i data-lucide="github"></i></a>
-                    </div>
-                </div>
+        <div class="p-6">
+            <img src="${coder.avatar}" alt="${coder.name}'s Avatar" class="w-24 h-24 rounded-full mx-auto mb-4">
+            <h2 class="text-xl font-semibold text-center mb-2">${coder.name}</h2>
+            <h3 class="text-lg text-gray-600 text-center mb-4">${coder.role}</h3>
+            <p class="text-gray-700 mb-4">${coder.description}</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+                ${coder.skills.map(skill => `<span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">${skill}</span>`).join('')}
             </div>
-            <div class="profile-card-back">
-                <h2>${student.name}</h2>
-                <p>${student.bio}</p>
-            </div>
+            <button class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300" onclick="alert('Contact ${coder.name} at ${coder.email}')">
+                Contact
+            </button>
         </div>
     `;
-
-    card.addEventListener('click', () => {
-        card.classList.toggle('flipped');
-    });
-
+    setTimeout(() => {
+        card.classList.add('show');
+    }, index * 100);
     return card;
 }
 
-// Function to render profile cards
-function renderProfileCards(studentsToRender) {
-    const profileGrid = document.getElementById('profileGrid');
-    
-    studentsToRender.forEach(student => {
-        const card = createProfileCard(student);
-        profileGrid.appendChild(card);
+function renderCoders(codersToRender) {
+    const grid = document.getElementById('coders-grid');
+    grid.innerHTML = '';
+    codersToRender.forEach((coder, index) => {
+        const card = createCoderCard(coder, index);
+        grid.appendChild(card);
     });
-
-    lucide.createIcons();
 }
 
-// Function to filter and search students
-function filterAndSearchStudents() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    const selectedCourse = document.getElementById('courseFilter').value;
-
-    const filteredStudents = students.filter(student => {
-        const matchesSearch = student.name.toLowerCase().includes(searchTerm) || 
-                              student.bio.toLowerCase().includes(searchTerm);
-        const matchesCourse = selectedCourse === '' || student.course === selectedCourse;
-        return matchesSearch && matchesCourse;
+function setupSearch() {
+    const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const filteredCoders = coders.filter(coder => 
+            coder.name.toLowerCase().includes(searchTerm) ||
+            coder.role.toLowerCase().includes(searchTerm) ||
+            coder.skills.some(skill => skill.toLowerCase().includes(searchTerm))
+        );
+        renderCoders(filteredCoders);
     });
-
-    document.getElementById('profileGrid').innerHTML = '';
-    currentPage = 1;
-    renderProfileCards(filteredStudents.slice(0, studentsPerPage));
 }
 
-// Infinite scrolling
-function loadMoreStudents() {
-    if (isLoading) return;
+function setupMouseFollower() {
+    const container = document.getElementById('container');
+    const mouseFollower = document.getElementById('mouse-follower');
 
-    isLoading = true;
-    document.getElementById('loading').style.display = 'flex';
-
-    setTimeout(() => {
-        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-        const selectedCourse = document.getElementById('courseFilter').value;
-
-        const filteredStudents = students.filter(student => {
-            const matchesSearch = student.name.toLowerCase().includes(searchTerm) || 
-                                  student.bio.toLowerCase().includes(searchTerm);
-            const matchesCourse = selectedCourse === '' || student.course === selectedCourse;
-            return matchesSearch && matchesCourse;
-        });
-
-        const start = currentPage * studentsPerPage;
-        const end = start + studentsPerPage;
-        const newStudents = filteredStudents.slice(start, end);
-
-        renderProfileCards(newStudents);
-        currentPage++;
-
-        isLoading = false;
-        document.getElementById('loading').style.display = 'none';
-    }, 1000); // Simulating network delay
+    container.addEventListener('mousemove', (e) => {
+        const { left, top } = container.getBoundingClientRect();
+        const x = e.clientX - left;
+        const y = e.clientY - top;
+        mouseFollower.style.left = `${x}px`;
+        mouseFollower.style.top = `${y}px`;
+    });
 }
 
-// Event listeners for search and filter
-document.getElementById('searchInput').addEventListener('input', filterAndSearchStudents);
-document.getElementById('courseFilter').addEventListener('change', filterAndSearchStudents);
-
-// Infinite scroll event listener
-window.addEventListener('scroll', () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
-        loadMoreStudents();
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    renderCoders(coders);
+    setupSearch();
+    setupMouseFollower();
 });
-
-// Theme toggle functionality
-const themeToggle = document.getElementById('themeToggle');
-
-themeToggle.addEventListener('change', () => {
-    document.body.classList.toggle('dark-theme');
-});
-
-// Initial render
-renderProfileCards(students.slice(0, studentsPerPage));
-
-// Add new students every 30 seconds
-setInterval(() => {
-    const newStudents = generateStudents(5);
-    students = [...students, ...newStudents];
-}, 30000);
