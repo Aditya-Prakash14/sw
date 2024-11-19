@@ -43,7 +43,50 @@ const students = [
         github: 'https://github.com/diana',
         linkedin: 'https://linkedin.com/in/diana',
         twitter: 'https://twitter.com/diana'
-    }
+    },
+    {
+        id: 5,
+        name: 'sahil Jain',
+        course: 'Computer Science',
+        year: 1,
+        bio: 'Interested in renewable energy and sustainable tech.',
+        image: 'https://media.istockphoto.com/id/2013971698/photo/it-programmer-using-computer.webp?a=1&b=1&s=612x612&w=0&k=20&c=OnkYNJuZIF-O_9-QCBcpUgBX8V71WUQnaHnuuwAxCRE=',
+        github: 'https://github.com/bob',
+        linkedin: 'https://linkedin.com/in/bob',
+        twitter: 'https://twitter.com/bob'
+    },{
+        id: 6,
+        name: 'Chiranjeev Agrawal',
+        course: 'Computer Science',
+        year: 1,
+        bio: 'Aspiring entrepreneur with a focus on tech startups.',
+        image: 'https://media.istockphoto.com/id/2012747478/photo/businessman-computer-or-programming-code-in-night-office-for-software-development.webp?a=1&b=1&s=612x612&w=0&k=20&c=jKYgdjR4gdyrwzQ4AcEHKCX6pbgQ3N7mnDf6Gr9AmqM=',
+        github: 'https://github.com/charlie',
+        linkedin: 'https://linkedin.com/in/charlie',
+        twitter: 'https://twitter.com/charlie'
+    },
+    {
+        id: 7,
+        name: 'Aditya Prakash',
+        course: 'Full Stack Developer',
+        year: 1,
+        bio: 'Creative thinker with a passion for digital art.',
+        image: 'https://media.istockphoto.com/id/1448504442/photo/portrait-of-focused-programer-writing-code-fixing-glasses-and-smiling-sitting-at-desk.jpg?s=612x612&w=0&k=20&c=5XMKSE2EdQ0KOdYDDS_78Y-batO09QRKU1FrXqlHQLs=',
+        github: 'https://github.com/diana',
+        linkedin: 'https://linkedin.com/in/diana',
+        twitter: 'https://twitter.com/diana'
+    },
+    {
+        id: 1,
+        name: 'Sahil Khan',
+        course: 'Computer Science',
+        year: 3,
+        bio: 'Passionate about AI and machine learning.',
+        image: 'https://plus.unsplash.com/premium_photo-1663089895867-428d148a8663?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cHJvZ3JhbW1lcnxlbnwwfHwwfHx8MA%3D%3D',
+        github: 'https://github.com/alice',
+        linkedin: 'https://linkedin.com/in/alice',
+        twitter: 'https://twitter.com/alice'
+    },
 ];
 
 // DOM elements
