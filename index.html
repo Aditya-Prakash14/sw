@@ -6,6 +6,19 @@
     <title>Student Profiles</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#4299e1',
+                    secondary: '#ed8936',
+                }
+            }
+        }
+    }
+</script>
 </head>
 <body>
     <div id="app" class="min-h-screen">
@@ -53,19 +66,7 @@
             </div>
         </div>
     </div>
-    <script>
-    tailwind.config = {
-        darkMode: 'class',
-        theme: {
-            extend: {
-                colors: {
-                    primary: '#4299e1',
-                    secondary: '#ed8936',
-                }
-            }
-        }
-    }
-</script>
+    
     <script src="script.js"></script>
 </body>
 </html>
