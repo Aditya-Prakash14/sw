@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced College Student Profiles</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header>
+        <h1>College Student Profiles</h1>
+        <div class="theme-toggle">
+            <input type="checkbox" id="themeToggle" class="theme-toggle-input">
+            <label for="themeToggle" class="theme-toggle-label">
+                <i data-lucide="sun" class="light-icon"></i>
+                <i data-lucide="moon" class="dark-icon"></i>
+            </label>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-filter">
+            <input type="text" id="searchInput" placeholder="Search students...">
+            <select id="courseFilter">
+                <option value="">All Courses</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Business">Business</option>
+            </select>
+        </div>
+
+        <div class="profile-grid" id="profileGrid">
+            <!-- Profile cards will be dynamically inserted here -->
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Advanced College Student Profiles. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
