@@ -33,7 +33,7 @@
 
             <div class="p-4">
                 <div class="mb-4 flex flex-wrap gap-4">
-                    <div class="relative flex-grow">
+                    <div class="relative flex-grow w-full sm:w-auto">
                         <input
                             type="text"
                             id="searchInput"
@@ -43,11 +43,8 @@
                         />
                         <i data-lucide="search" class="absolute left-3 top-2.5 w-5 h-5 text-gray-400"></i>
                     </div>
-                    <select
-                        id="yearFilter"
-                        class="p-2 rounded border bg-white"
-                        aria-label="Filter by year"
-                    >
+                    <select className="w-full sm:w-auto p-2 rounded border dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white " id="yearFilter">
+                    
                         <option value="all">All Years</option>
                         <option value="1">Year 1</option>
                         <option value="2">Year 2</option>
