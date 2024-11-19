@@ -1,19 +1,381 @@
-.coder-card {
-    opacity: 0;
-    transform: translateY(20px);
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1a202c;
+    --card-bg: #ffffff;
+    --card-text: #1a202c;
+    --hover-bg: #f7fafc;
+    --primary-color: #4299e1;
+    --secondary-color: #ed8936;
+    --navbar-bg: #2c5282;
+    --navbar-text: #ffffff;
 }
 
-.coder-card.show {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+.dark {
+    --bg-color: #1a202c;
+    --text-color: #ffffff;
+    --card-bg: #2d3748;
+    --card-text: #ffffff;
+    --hover-bg: #4a5568;
+    --primary-color: #63b3ed;
+    --secondary-color: #fbd38d;
+    --navbar-bg: #1a365d;
+    --navbar-text: #ffffff;
 }
 
-.coder-card:hover {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+    transition: background 0.5s ease;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text);
+    padding: 1rem;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--navbar-text);
+}
+
+.navbar-menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin-left: 1rem;
+}
+
+.navbar-menu a {
+    color: var(--navbar-text);
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.theme-toggle,
+.navbar-toggle {
+    background: none;
+    border: none;
+    color: var(--navbar-text);
+    cursor: pointer;
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--navbar-bg);
+        padding: 1rem;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-menu li {
+        margin: 0.5rem 0;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+}
+
+/* Existing styles */
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.hover\:bg-gray-200:hover {
+    background-color: var(--hover-bg);
+}
+
+.transition-colors {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.w-6 {
+    width: 1.5rem;
+}
+
+.h-6 {
+    height: 1.5rem;
+}
+
+.relative {
+    position: relative;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.pl-10 {
+    padding-left: 2.5rem;
+}
+
+.rounded {
+    border-radius: 0.25rem;
+}
+
+.border {
+    border: 1px solid #e2e8f0;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.left-3 {
+    left: 0.75rem;
+}
+
+.top-2\.5 {
+    top: 0.625rem;
+}
+
+.w-5 {
+    width: 1.25rem;
+}
+
+.h-5 {
+    height: 1.25rem;
+}
+
+.text-gray-400 {
+    color: #a0aec0;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
+.bg-white {
+    background-color: var(--card-bg);
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.transition-transform {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+.hover\:scale-105:hover {
     transform: scale(1.05);
-    transition: transform 0.3s ease;
 }
 
-#mouse-follower {
-    transition: left 0.1s ease, top 0.1s ease;
+.object-cover {
+    object-fit: cover;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-gray-600 {
+    color: #718096;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.space-x-4 > * + * {
+    margin-left: 1rem;
+}
+
+.hover\:text-gray-900:hover {
+    color: #1a202c;
+}
+
+/* Card styles */
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+.card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.social-links a {
+    transition: transform 0.2s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@media (min-width: 640px) {
+    .sm\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1280px) {
+    .xl\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }
