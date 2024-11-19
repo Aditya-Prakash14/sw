@@ -2,7 +2,7 @@ const coders = [
     {
         name: "Sahil Khan",
         role: "Full Stack Developer",
-        avatar: "/placeholder.svg?height=120&width=120",
+        avatar: "sahil.png",
         description: "Experienced in building scalable web applications.",
         skills: ["JavaScript", "React", "Node.js", "Python", "SQL"],
         email: "sahilk12@gmail.com",
@@ -12,7 +12,7 @@ const coders = [
     {
         name: "Krish jain",
         role: "Frontend Specialist",
-        avatar: "/placeholder.svg?height=120&width=120",
+        avatar: "krish.png",
         description: "Passionate about creating intuitive user interfaces.",
         skills: ["HTML", "CSS", "JavaScript", "Vue.js", "Sass"],
         email: "",
@@ -22,7 +22,7 @@ const coders = [
     {
         name: "Chiranjeev Agarwal",
         role: "Data Scientist",
-        avatar: "/placeholder.svg?height=120&width=120",
+        avatar: "chru.png",
         description: "Skilled in machine learning and data analysis.",
         skills: ["Python", "R", "Machine Learning", "SQL", "Tableau"],
         email: "emily.chen@example.com",
@@ -32,7 +32,7 @@ const coders = [
     {
         name: "Aditya",
         role: "DevOps Engineer",
-        avatar: "/placeholder.svg?height=120&width=120",
+        avatar: "priyansu.png",
         description: "Experienced in cloud infrastructure and CI/CD pipelines.",
         skills: ["Docker", "Kubernetes", "AWS", "Jenkins", "Terraform"],
         email: "ap312038@gmail.com",
