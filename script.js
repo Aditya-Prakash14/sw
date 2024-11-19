@@ -1,43 +1,43 @@
 const coders = [
     {
-        name: "Jane Doe",
+        name: "Sahil Khan",
         role: "Full Stack Developer",
         avatar: "/placeholder.svg?height=120&width=120",
         description: "Experienced in building scalable web applications.",
         skills: ["JavaScript", "React", "Node.js", "Python", "SQL"],
-        email: "jane.doe@example.com",
-        location: "San Francisco, CA",
-        github: "github.com/janedoe"
+        email: "sahilk12@gmail.com",
+        location: "Pune, India",
+        github: "github.com/shail"
     },
     {
-        name: "John Smith",
+        name: "Krish jain",
         role: "Frontend Specialist",
         avatar: "/placeholder.svg?height=120&width=120",
         description: "Passionate about creating intuitive user interfaces.",
         skills: ["HTML", "CSS", "JavaScript", "Vue.js", "Sass"],
-        email: "john.smith@example.com",
-        location: "New York, NY",
-        github: "github.com/johnsmith"
+        email: "",
+        location: "Pune India",
+        github: "github.com/krish"
     },
     {
-        name: "Emily Chen",
+        name: "Chiranjeev Agarwal",
         role: "Data Scientist",
         avatar: "/placeholder.svg?height=120&width=120",
         description: "Skilled in machine learning and data analysis.",
         skills: ["Python", "R", "Machine Learning", "SQL", "Tableau"],
         email: "emily.chen@example.com",
-        location: "Seattle, WA",
-        github: "github.com/emilychen"
+        location: "Pune, India",
+        github: "github.com/Chiranjeev"
     },
     {
-        name: "Mohammed Ali",
+        name: "Aditya",
         role: "DevOps Engineer",
         avatar: "/placeholder.svg?height=120&width=120",
         description: "Experienced in cloud infrastructure and CI/CD pipelines.",
         skills: ["Docker", "Kubernetes", "AWS", "Jenkins", "Terraform"],
-        email: "mohammed.ali@example.com",
+        email: "ap312038@gmail.com",
         location: "London, UK",
-        github: "github.com/mohammedali"
+        github: "github.com/aditya"
     }
 ];
 
