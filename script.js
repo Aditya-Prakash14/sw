@@ -87,6 +87,28 @@ const students = [
         linkedin: 'https://linkedin.com/in/alice',
         twitter: 'https://twitter.com/alice'
     },
+    {
+        id: 9,
+        name: 'Abhay Pratap Yadav',
+        course: 'Computer Science',
+        year: 3,
+        bio: 'Passionate about AI and machine learning.',
+        image: 'https://plus.unsplash.com/premium_photo-1663089895867-428d148a8663?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cHJvZ3JhbW1lcnxlbnwwfHwwfHx8MA%3D%3D',
+        github: 'https://github.com/QUBITABHAY',
+        linkedin: 'https://www.linkedin.com/in/abhay-pratap-yadav-52452832b/',
+        twitter: 'https://twitter.com/alice'
+    },
+    {
+        id: 10,
+        name: 'Vipul',
+        course: 'Computer Science',
+        year: 3,
+        bio: 'Passionate about AI and machine learning.',
+        image: 'https://plus.unsplash.com/premium_photo-1663089895867-428d148a8663?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cHJvZ3JhbW1lcnxlbnwwfHwwfHx8MA%3D%3D',
+        github: 'https://github.com/alice',
+        linkedin: 'https://linkedin.com/in/alice',
+        twitter: 'https://twitter.com/alice'
+    },
 ];
 
 // DOM elements
